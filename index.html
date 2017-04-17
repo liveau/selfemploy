@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+			<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>OZ打工仔自己做老板</title>
+		<meta name="description" content="澳大利亚 OZ打工仔自己做老板" />
+		<meta name="keywords" content="澳大利亚 OZ打工仔自己做老板" />
+		<meta name="author" content="Jerry" />
+		<meta name="generator" content="Hugo 0.19" />
+		<style>
+		body {
+		background: #f9f9f9;
+		color: ;
+		}
+		</style>
+		<link rel="stylesheet" type="text/css" href="https://liveau.github.io/selfemploy/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="https://liveau.github.io/selfemploy/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="https://afeld.github.io/emoji-css/emoji.css" />
+		<link rel="stylesheet" type="text/css" href="https://ellekasai.github.io/twemoji-awesome/twemoji-awesome.css" />
+		<script src="https://liveau.github.io/selfemploy/js/modernizr.custom.js"></script>
+
+	
+	</head>
+	<body>
+		<div class="container">	
+							<header class="clearfix">
+				<h1>OZ打工仔自己做老板</h1>
+				<img style="width:60px;height:60px;position: absolute; top: 50px; right: 0; border: 0;" src="images/full/1f3cc.svg" alt="" >
+				<img style="width:60px;height:60px;position: absolute; top: 50px; left: 0; border: 0;" src="images/full/1f6b4.svg" alt="" >
+				<br>
+				<h3><span class="bordered" id="description"><br>欢迎打工仔打工妹做全职兼职小老板
+<br>交流经验，共享信息，分享故事<i class="em em-speech_balloon"></i>
+<br>也欢迎<i class="em em-house_with_garden"></i>airbnb, <i class="em em-package"></i>ebay, <i class="em em-blue_car"></i>uber, <i class="em em-office"></i>stayz, <i class="em em-european_castle"></i>homestay业主
+<br>欢迎自主经营的生意广告<i class="em em-loudspeaker"></i>。需红包10人份￥20<i class="em em-moneybag"></i>，并分享自己的创业简历
+<br><i class="em em-u7981"></i>无关小广告</span></h3>
+				<h2><span><font style='background-color:TEAL;color:white'><b>点击下面条目，显示具体内容</b></font></span></h2>
+			</header>
+			<div class="main">
+				<ul id="og-grid" class="og-grid">
+					
+					<li>
+						<a href="" data-largesrc="images/full/headshot.JPG" data-title="二维码" data-description="">
+							<i class="twa twa-lg twa-busts-in-silhouette" ></i><div style="font-size:100%;background-color:powderblue;float:right"><b>二维码</b></div>
+						</a>
+					</li>
+					
+				</ul>
+								<p>由<font style='background-color:powderblue;color:blue'><b>Jerry</b></font>创建和维护 | 微信: <font style='background-color:powderblue;color:blue'><b>jw-xiaodwan</b></font></p>
+			</div>
+		</div>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+			var $event = $.event,
+			$special,
+			resizeTimeout;
+
+			$special = $event.special.debouncedresize = {
+				setup: function() {
+					$( this ).on( "resize", $special.handler );
+				},
+				teardown: function() {
+					$( this ).off( "resize", $special.handler );
+				},
+				handler: function( event, execAsap ) {
+					var context = this,
+						args = arguments,
+						dispatch = function() {
+							event.type = "debouncedresize";
+							$event.dispatch.apply( context, args );
+						};
+
+					if ( resizeTimeout ) {
+						clearTimeout( resizeTimeout );
+					}
+
+					execAsap ?
+						dispatch() :
+						resizeTimeout = setTimeout( dispatch, $special.threshold );
+				},
+				threshold: 250
+			};
+
+			var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+			$.fn.imagesLoaded = function( callback ) {
+				var $this = this,
+					deferred = $.isFunction($.Deferred) ? $.Deferred() : 0,
+					hasNotify = $.isFunction(deferred.notify),
+					$images = $this.find('img').add( $this.filter('img') ),
+					loaded = [],
+					proper = [],
+					broken = [];
+
+				if ($.isPlainObject(callback)) {
+					$.each(callback, function (key, value) {
+						if (key === 'callback') {
+							callback = value;
+						} else if (deferred) {
+							deferred[key](value);
+						}
+					});
+				}
+
+				function doneLoading() {
+					var $proper = $(proper),
+						$broken = $(broken);
+
+					if ( deferred ) {
+						if ( broken.length ) {
+							deferred.reject( $images, $proper, $broken );
+						} else {
+							deferred.resolve( $images );
+						}
+					}
+
+					if ( $.isFunction( callback ) ) {
+						callback.call( $this, $images, $proper, $broken );
+					}
+				}
+
+				function imgLoaded( img, isBroken ) {
+					if ( img.src === BLANK || $.inArray( img, loaded ) !== -1 ) {
+						return;
+					}
+
+					loaded.push( img );
+
+					if ( isBroken ) {
+						broken.push( img );
+					} else {
+						proper.push( img );
+					}
+
+					$.data( img, 'imagesLoaded', { isBroken: isBroken, src: img.src } );
+
+					if ( hasNotify ) {
+						deferred.notifyWith( $(img), [ isBroken, $images, $(proper), $(broken) ] );
+					}
+
+					if ( $images.length === loaded.length ){
+						setTimeout( doneLoading );
+						$images.unbind( '.imagesLoaded' );
+					}
+				}
+
+				if ( !$images.length ) {
+					doneLoading();
+				} else {
+					$images.bind( 'load.imagesLoaded error.imagesLoaded', function( event ){
+						imgLoaded( event.target, event.type === 'error' );
+					}).each( function( i, el ) {
+						var src = el.src;
+
+						var cached = $.data( el, 'imagesLoaded' );
+						if ( cached && cached.src === src ) {
+							imgLoaded( el, cached.isBroken );
+							return;
+						}
+
+						if ( el.complete && el.naturalWidth !== undefined ) {
+							imgLoaded( el, el.naturalWidth === 0 || el.naturalHeight === 0 );
+							return;
+						}
+
+						if ( el.readyState || el.complete ) {
+							el.src = BLANK;
+							el.src = src;
+						}
+					});
+				}
+
+				return deferred ? deferred.promise( $this ) : $this;
+			};
+
+			var Grid = (function() {
+
+				var $grid = $( '#og-grid' ),
+					$items = $grid.children( 'li' ),
+					current = -1,
+					previewPos = -1,
+					scrollExtra = 0,
+					marginExpanded = 10,
+					$window = $( window ), winsize,
+					$body = $( 'html, body' ),
+					transEndEventNames = {
+						'WebkitTransition' : 'webkitTransitionEnd',
+						'MozTransition' : 'transitionend',
+						'OTransition' : 'oTransitionEnd',
+						'msTransition' : 'MSTransitionEnd',
+						'transition' : 'transitionend'
+					},
+					transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+					support = Modernizr.csstransitions,
+					settings = {
+						minHeight : 650,
+						speed : 350,
+						easing : 'ease'
+					};
+
+				function init( config ) {
+					
+					settings = $.extend( true, {}, settings, config );
+
+					$grid.imagesLoaded( function() {
+
+						saveItemInfo( true );
+						getWinSize();
+						initEvents();
+
+					} );
+
+				}
+
+				function addItems( $newitems ) {
+
+					$items = $items.add( $newitems );
+
+					$newitems.each( function() {
+						var $item = $( this );
+						$item.data( {
+							offsetTop : $item.offset().top,
+							height : $item.height()
+						} );
+					} );
+
+					initItemsEvents( $newitems );
+
+				}
+
+				function saveItemInfo( saveheight ) {
+					$items.each( function() {
+						var $item = $( this );
+						$item.data( 'offsetTop', $item.offset().top );
+						if( saveheight ) {
+							$item.data( 'height', $item.height() );
+						}
+					} );
+				}
+
+				function initEvents() {
+					
+					initItemsEvents( $items );
+					
+					$window.on( 'debouncedresize', function() {
+						
+						scrollExtra = 0;
+						previewPos = -1;
+						saveItemInfo();
+						getWinSize();
+						var preview = $.data( this, 'preview' );
+						if( typeof preview != 'undefined' ) {
+							hidePreview();
+						}
+
+					} );
+
+				}
+
+				function initItemsEvents( $items ) {
+					$items.on( 'click', 'span.og-close', function() {
+						hidePreview();
+						return false;
+					} ).children( 'a' ).on( 'click', function(e) {
+
+						var $item = $( this ).parent();
+						current === $item.index() ? hidePreview() : showPreview( $item );
+						return false;
+
+					} );
+				}
+
+				function getWinSize() {
+					winsize = { width : $window.width(), height : $window.height() };
+				}
+
+				function showPreview( $item ) {
+
+					var preview = $.data( this, 'preview' ),
+						position = $item.data( 'offsetTop' );
+
+					scrollExtra = 0;
+
+					if( typeof preview != 'undefined' ) {
+
+						if( previewPos !== position ) {
+							if( position > previewPos ) {
+								scrollExtra = preview.height;
+							}
+							hidePreview();
+						}
+						else {
+							preview.update( $item );
+							return false;
+						}
+						
+					}
+
+					previewPos = position;
+					preview = $.data( this, 'preview', new Preview( $item ) );
+					preview.open();
+
+				}
+
+				function hidePreview() {
+					current = -1;
+					var preview = $.data( this, 'preview' );
+					preview.close();
+					$.removeData( this, 'preview' );
+				}
+
+				function Preview( $item ) {
+					this.$item = $item;
+					this.expandedIdx = this.$item.index();
+					this.create();
+					this.update();
+				}
+
+				Preview.prototype = {
+					create : function() {
+						this.$title = $( '<h3></h3>' );
+						this.$description = $( '<p></p>' );
+						this.$href = $( '<a href="#">回到主页</a>' );
+						this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+						this.$loading = $( '<div class="og-loading"></div>' );
+						this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
+						this.$closePreview = $( '<span class="og-close"></span>' );
+						this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+						this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
+						this.$item.append( this.getEl() );
+						if( support ) {
+							this.setTransition();
+						}
+					},
+					update : function( $item ) {
+
+						if( $item ) {
+							this.$item = $item;
+						}
+						
+						if( current !== -1 ) {
+							var $currentItem = $items.eq( current );
+							$currentItem.removeClass( 'og-expanded' );
+							this.$item.addClass( 'og-expanded' );
+							this.positionPreview();
+						}
+
+						current = this.$item.index();
+
+						var $itemEl = this.$item.children( 'a' ),
+							eldata = {
+								href : $itemEl.attr( 'href' ),
+								largesrc : $itemEl.data( 'largesrc' ),
+								title : $itemEl.data( 'title' ),
+								description : $itemEl.data( 'description' )
+							};
+
+						this.$title.html( eldata.title );
+						this.$description.html( eldata.description );
+						this.$href.attr( 'href', eldata.href );
+
+						var self = this;
+						
+						if( typeof self.$largeImg != 'undefined' ) {
+							self.$largeImg.remove();
+						}
+
+						
+							this.$loading.show();
+							self.$fullimage.show();
+							$( '<img/>' ).load( function() {
+								var $img = $( this );
+								if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
+									self.$loading.hide();
+									self.$fullimage.find( 'img' ).remove();
+									self.$largeImg = $img.fadeIn( 350 );
+									self.$fullimage.append( self.$largeImg );
+								}
+							} ).attr( 'src', eldata.largesrc );	
+						
+
+
+					},
+					open : function() {
+
+						setTimeout( $.proxy( function() {	
+							this.setHeights();
+							this.positionPreview();
+						}, this ), 25 );
+
+					},
+					close : function() {
+
+						var self = this,
+							onEndFn = function() {
+								if( support ) {
+									$( this ).off( transEndEventName );
+								}
+								self.$item.removeClass( 'og-expanded' );
+								self.$previewEl.remove();
+							};
+
+						setTimeout( $.proxy( function() {
+
+							if( typeof this.$largeImg !== 'undefined' ) {
+								this.$largeImg.fadeOut( 'fast' );
+							}
+							this.$previewEl.css( 'height', 0 );
+							var $expandedItem = $items.eq( this.expandedIdx );
+							$expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( transEndEventName, onEndFn );
+
+							if( !support ) {
+								onEndFn.call();
+							}
+
+						}, this ), 25 );
+						
+						return false;
+
+					},
+					calcHeight : function() {
+
+						var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
+							itemHeight = winsize.height;
+
+						if( heightPreview < settings.minHeight ) {
+							heightPreview = settings.minHeight;
+							itemHeight = settings.minHeight + this.$item.data( 'height' ) + marginExpanded;
+						}
+
+						this.height = heightPreview;
+						this.itemHeight = itemHeight;
+
+					},
+					setHeights : function() {
+
+						var self = this,
+							onEndFn = function() {
+								if( support ) {
+									self.$item.off( transEndEventName );
+								}
+								self.$item.addClass( 'og-expanded' );
+							};
+
+						this.calcHeight();
+						this.$previewEl.css( 'height', this.height );
+						this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
+
+						if( !support ) {
+							onEndFn.call();
+						}
+
+					},
+					positionPreview : function() {
+
+						var position = this.$item.data( 'offsetTop' ),
+							previewOffsetT = this.$previewEl.offset().top - scrollExtra,
+							scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
+						
+						$body.animate( { scrollTop : scrollVal }, settings.speed );
+
+					},
+					setTransition  : function() {
+						this.$previewEl.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
+						this.$item.css( 'transition', 'height ' + settings.speed + 'ms ' + settings.easing );
+					},
+					getEl : function() {
+						return this.$previewEl;
+					}
+				}
+
+				return { 
+					init : init,
+					addItems : addItems
+				};
+
+			})();
+		</script>
+		<script>
+			$(function() {
+				Grid.init();
+			});
+		</script>
+	</body>
+</html>
